@@ -4,16 +4,17 @@
   "description": "![alt text](data/me.jpg)\r # Yuvraj Singh (Yuvi)\r ### Senior at SUNY New Paltz majoring in Computer Science",
   "author": "",
   "license": "ISC",
-
   "scripts": {
     "dev": "nodemon --watch server server/index.js",
     "start": "node server/index.js"
   },
   "dependencies": {
+    "bulma": "^0.9.4",
     "express": "4.18.1"
   },
   "devDependencies": {
-    "nodemon": "2.0.20"
+    "nodemon": "2.0.20",
+    "sass": "^1.55.0"
   },
   "repository": {
     "type": "git",

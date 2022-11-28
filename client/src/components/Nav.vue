@@ -22,11 +22,11 @@
         
         <div :class="{ 'is-active': isActive }" id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <router-link to="" class="navbar-item">
+                <router-link to="/" class="navbar-item">
                     Home
                 </router-link>
         
-                <router-link to="" class="navbar-item">
+                <router-link to="/products" class="navbar-item">
                     Store
                 </router-link>
         
@@ -36,7 +36,7 @@
                     </a>
         
                     <div class="navbar-dropdown">
-                        <router-link to="" class="navbar-item">
+                        <router-link to="/about" class="navbar-item">
                             About
                         </router-link>
                         <a class="navbar-item">

@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 
+const productsController = require('./controllers/products')
+const cartController = require('./controllers/cart')
+
 const hostname = '127.0.0.1';
 const port = 3000;
 
@@ -24,7 +27,8 @@ app
   sss.PORT();
 })
 
-
+app.use('/api/v1/products', productsController);
+app.use('/api/v1/cart', cartController);
 
 app.get('*', (req, res) => {
     

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+    import { ref } from 'vue';
+    import LoginBadge from './login-badge.vue';
+    import { RouterLink } from 'vue-router';
+
+    let isActive = ref(false);
+</script>
+
 <template>
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
@@ -5,22 +13,22 @@
                 <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
             </a>
         
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <a :class="{ 'is-active': isActive }" @click="isActive = !isActive" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
         
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div :class="{ 'is-active': isActive }" id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
+                <router-link to="" class="navbar-item">
                     Home
-                </a>
+                </router-link>
         
-                <a class="navbar-item">
-                    Documentation
-                </a>
+                <router-link to="" class="navbar-item">
+                    Store
+                </router-link>
         
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
@@ -28,9 +36,9 @@
                     </a>
         
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
+                        <router-link to="" class="navbar-item">
                             About
-                        </a>
+                        </router-link>
                         <a class="navbar-item">
                             Jobs
                         </a>
@@ -47,14 +55,7 @@
         
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-primary">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                            Log in
-                        </a>
-                    </div>
+                    <login-badge />
                 </div>
             </div>
         </div>

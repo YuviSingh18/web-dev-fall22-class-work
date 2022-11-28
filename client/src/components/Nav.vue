@@ -2,11 +2,14 @@
     import { ref } from 'vue';
     import LoginBadge from './login-badge.vue';
     import { RouterLink } from 'vue-router';
+    import Cart from './Cart.vue';
 
-    let isActive = ref(false);
+    const isActive = ref(false);
+    const isCartOpen = ref(false);
 </script>
 
 <template>
+    <Cart :is-open="isCartOpen" />
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="https://bulma.io">
@@ -54,6 +57,11 @@
             </div>
         
             <div class="navbar-end">
+                <div class="navbar-item">
+                    <button class="button is-primary" @click="isCartOpen = !isCartOpen">
+                        <strong>Cart</strong>
+                    </button>
+                </div>
                 <div class="navbar-item">
                     <login-badge />
                 </div>
